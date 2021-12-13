@@ -22,7 +22,6 @@ defmodule UrlShortener.Router do
     {:ok, req_body, conn} = Plug.Conn.read_body conn, opts
 
     {result, body} = InsertLink.parse_body req_body
-    IO.inspect {result, body}
     if result == :error do
       response conn, bad_request(), body
 
