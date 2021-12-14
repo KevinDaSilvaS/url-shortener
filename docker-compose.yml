@@ -21,7 +21,17 @@ services:
       - ME_CONFIG_MONGODB_URL=mongodb://mongo:27017/
     networks:
       - url-shortener
-
+    
+  url_shortener_app:
+        image: url_shortener_app 
+        build: 
+            context: .
+        ports: 
+            - "${PORT}:8080"
+        links:
+            - mongo
+        networks:
+            - url-shortener
 networks:
     url-shortener:
         driver: bridge
