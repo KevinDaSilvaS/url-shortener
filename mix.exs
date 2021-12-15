@@ -26,7 +26,7 @@ defmodule UrlShortener.MixProject do
       {:jason, "~> 1.2"},
       {:mongodb, ">= 0.0.0"},
       {:poolboy, ">= 0.0.0"},
-      { :stream_data, ">= 0.0.0" },
+      {:stream_data, ">= 0.0.0"}
     ]
   end
 end
