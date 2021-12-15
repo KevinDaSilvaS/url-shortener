@@ -1,0 +1,13 @@
+_build
+cover
+docker-compose.yml
+docker-compose-dev.yml
+Dockerfile
+.dockerignore
+doc
+.fetch
+deps
+erl_crash.dump
+*.ez
+url_shortener-*.tar
+/tmp/
