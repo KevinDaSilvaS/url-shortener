@@ -3,11 +3,10 @@ defmodule UrlShortener.Application do
   require Logger
 
   @pool_size Application.fetch_env(:url_shortener, :pool_size)
-  @port Application.fetch_env(:url_shortener, :port)
   def start(_type, _args) do
     import Supervisor.Spec
     children = [
-      {Plug.Cowboy, scheme: :http, plug: UrlShortener.Router, options: [port: @port]},
+      {Plug.Cowboy, scheme: :http, plug: UrlShortener.Router, options: [port: 8080]},
       worker(Mongo, [[name: :mongo, url: "mongodb://mongo:27017/links", pool_size: @pool_size]])
     ]
 
