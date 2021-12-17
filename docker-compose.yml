@@ -28,6 +28,8 @@ services:
       context: .
     ports: 
       - "9090:8080"
+    environment:
+      - PORT=${PORT}
     depends_on:
       - mongo
     networks:
