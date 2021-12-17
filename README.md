@@ -1,21 +1,28 @@
 # UrlShortener
 
-**TODO: Add description**
+**Url shortener app made with Elixir and Plug**
 
 ## Installation
 
-If [available in Hex](https://hex.pm/docs/publish), the package can be installed
-by adding `url_shortener` to your list of dependencies in `mix.exs`:
+Run: `docker-compose up -d --build`
 
-```elixir
-def deps do
-  [
-    {:url_shortener, "~> 0.1.0"}
-  ]
-end
+To create a link:
+```
+POST
+http://localhost:9090/links
+
+BODY:
+{
+	"url": "https://github.com/",
+	"alias": "hi"
+}
 ```
 
-Documentation can be generated with [ExDoc](https://github.com/elixir-lang/ex_doc)
-and published on [HexDocs](https://hexdocs.pm). Once published, the docs can
-be found at [https://hexdocs.pm/url_shortener](https://hexdocs.pm/url_shortener).
+To go to a link:
+```
+GET
+http://localhost:9090/:link_alias
+EXAMPLE:
+http://localhost:9090/hi
+```
 
